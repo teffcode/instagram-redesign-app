@@ -259,5 +259,39 @@
 
     <section id="photos" class="photos-container"></section>
   </div>
+  
+  <script>
+    const username = document.getElementById('username')
+    const posts = document.getElementById('posts')
+    const photos = document.getElementById('photos')
+
+    const BASE_API = 'https://graph.instagram.com/me'
+    const ACCESS_TOKEN = 'IGQVJYaGNNUXY4VlBGWUdKdDBzVklQQlQ5RjBIdDVPVjRsOXJkRzhCZAGJfNlYyWDlteVlHNEw3UXV1X3pGYksyNXA4eWJJQWxiQ0Nia2VWeEgxOEhJOEM0bnEtNnFQV1dxQ3R0T1lhSGdCd2dab3VxSlBQc1JENW05aHdN'
+
+    async function getUserInfo() {
+      const response = await fetch(`${BASE_API}?fields=username,media_count&access_token=${ACCESS_TOKEN}`)
+      const userInfo = await response.json()
+      console.log(userInfo)
+      username.innerHTML = userInfo.username
+      posts.innerHTML = userInfo.media_count
+      return userInfo
+    }
+
+    getUserInfo()
+
+    async function getUserMediaInfo() {
+      const response = await fetch(`${BASE_API}/media?fields=id,media_url&access_token=${ACCESS_TOKEN}`)
+      const userMediaInfo = await response.json()
+      return userMediaInfo
+    }
+
+    getUserMediaInfo().then(media => {
+      media.data.map((mediaInfo) => {
+        const img = document.createElement('img')
+        img.src = mediaInfo.media_url
+        photos.appendChild(img)
+      })
+    })
+  </script>
 </body>
 </html>

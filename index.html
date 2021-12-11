@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300&display=swap');
+
+    :root {
+      --gray: #EAEBF3;
+      --dark-gray: #A5A5A5;
+      --black: #000000;
+      --text-sm: 10px;
+      --text-md: 12px;
+      --text-lg: 14px;
+    }
+
+    body {
+      background: var(--gray);
+      font-family: 'Source Sans 3', sans-serif;
+    }
+
+    /* General styles */
+
+    .text-sm {
+      font-size: var(--text-sm);
+      text-align: center;
+      margin: 0;
+    }
+
+    .text-md {
+      font-size: var(--text-md);
+      text-align: center;
+      margin: 0;
+    }
+
+    .text-lg {
+      font-size: var(--text-lg);
+      text-align: center;
+      margin: 0;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .center {
+      display: grid;
+      place-items: center;
+    }
+
+    .icon-sm {
+      width: 16px;
+    }
+
+    .icon-md {
+      width: 24px;
+    }
+
+    /* Header styles */
+
+    .header-container {
+      display: grid;
+      grid-template-columns: 16px 50px 150px 50px 16px;
+      margin-top: 20px;
+    }
+
+    .notification {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: red;
+      border-radius: 50%;
+      top: 2px;
+      right: 2px;
+    }
+
+    .profile-pic-neumorphism {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 16px 0;
+      box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+                -9px -9px 16px rgb(255 255 255 / 50%);
+    }
+
+    .icon-neumorphism {
+      align-self: end;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      justify-self: center;
+      box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+                -9px -9px 16px rgb(255 255 255 / 50%);
+    }
+
+    .story {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(to right, red, purple);
+    }
+
+    .profile-picture {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid var(--gray);
+      background: var(--gray);
+    }
+
+    /* Post styles */
+
+    .posts-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 282px;
+      height: 45px;
+      border-radius: 8px;
+      box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+                -9px -9px 16px rgb(255 255 255 / 50%);
+      margin-top: 16px;
+    }
+
+    .text-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .text-box span + span {
+      color: var(--dark-gray);
+    }
+
+    /* Highlight styles */
+
+    .highlights-container {
+      list-style-type: none;
+      display: flex;
+      padding: 0;
+    }
+
+    .highlights-container div {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+                -9px -9px 16px rgb(255 255 255 / 50%);
+      margin: 8px;
+    }
+
+    /* Photo styles */
+
+    .photos-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 4px;
+      width: 282px;
+    }
+
+    .photos-container img {
+      border-radius: 8px;
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <header class="header-container">
+      <img class="icon-sm" src="https://img.icons8.com/external-becris-lineal-becris/50/000000/external-edit-mintab-for-ios-becris-lineal-becris.png"/>
+
+      <div class="icon-neumorphism center relative">
+        <div class="notification"></div>
+        <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="30" height="30"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#a5a5a5"><path d="M28.66667,28.66667c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v86c0,6.33533 5.13133,11.46667 11.46667,11.46667h22.93333v22.93333c0,3.16643 2.5669,5.73333 5.73333,5.73333c1.9417,-0.00362 3.74963,-0.98976 4.80391,-2.62031l19.56276,-26.04636h61.63333c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-86c0,-6.33533 -5.13133,-11.46667 -11.46667,-11.46667z"></path></g></g></svg>
+      </div>
+
+      <div class="center">
+        <div class="profile-pic-neumorphism center">
+          <div class="story center">
+            <img class="profile-picture" src="https://scontent-bog1-1.cdninstagram.com/v/t51.2885-15/18300095_278312585963307_9179315967434424320_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=Zio5O-jBLXkAX9Cx181&_nc_ht=scontent-bog1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=81d971eb6ea000a5465982e3d27741d0&oe=61B8D7A3" alt="Mike">
+          </div>
+        </div>
+        <h1 id="username" class="text-lg"></h1>
+      </div>
+
+      <div class="icon-neumorphism center">
+        <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="30" height="30"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#a5a5a5"><path d="M54.72422,22.93333c-20.726,0 -37.52422,16.79822 -37.52422,37.52422c0,36.07642 41.84746,70.54796 61.39817,85.89922c0.01862,0.01499 0.03728,0.02992 0.05599,0.04479c0.13396,0.10517 0.31608,0.25498 0.44792,0.35833l0.0112,-0.0112c1.98358,1.4988 4.40056,2.31232 6.88672,2.31797c2.48999,-0.00322 4.91127,-0.81686 6.89792,-2.31797v0.0112c0.03859,-0.03025 0.09561,-0.07038 0.13437,-0.10078c0.02948,-0.02312 0.0712,-0.05517 0.10079,-0.07839c0.03755,-0.03335 0.07487,-0.06694 0.11198,-0.10078c19.49011,-15.2961 61.55495,-49.85989 61.55495,-86.02239c0,-20.726 -16.79822,-37.52422 -37.52422,-37.52422c-19.80867,0 -31.27578,17.2 -31.27578,17.2c0,0 -11.46711,-17.2 -31.27578,-17.2z"></path></g></g></svg>
+      </div>
+
+      <img class="icon-sm" class="icon" src="https://img.icons8.com/ios/50/000000/settings--v1.png"/>
+    </header>
+
+    <section class="posts-container">
+      <p class="text-box text-md">
+        <span id="posts"></span>
+        <span>Posts</span>
+      </p>
+
+      <p class="text-box text-md">
+        <span>14</span>
+        <span>Followers</span>
+      </p>
+
+      <p class="text-box text-md">
+        <span>83</span>
+        <span>Following</span>
+      </p>
+    </section>
+
+    <ul class="highlights-container">
+      <li>
+        <div class="center">
+          <img class="icon-sm" src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-shopping-bag-e-commerce-kmg-design-outline-color-kmg-design-1.png"/>
+        </div>
+        <p class="text-sm">Shopping</p>
+      </li>
+
+      <li>
+        <div class="center">
+          <img class="icon-sm" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-carrot-vegetable-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"/>
+        </div>
+        <p class="text-sm">Life Style</p>
+      </li>
+
+      <li>
+        <div class="center">
+          <img class="icon-sm" src="https://img.icons8.com/external-filled-outline-icons-pause-08/64/000000/external-clothes-autumn-filled-outline-icons-pause-08.png"/>
+        </div>
+        <p class="text-sm">Trend ?!</p>
+      </li>
+
+      <li>
+        <div class="center">
+          <img class="icon-sm" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-plane-summer-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"/>
+        </div>
+        <p class="text-sm">Travel</p>
+      </li>
+
+      <li>
+        <div class="center">
+          <img class="icon-sm" src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/000000/external-Dog-chinese-new-year-bearicons-outline-color-bearicons.png"/>
+        </div>
+        <p class="text-sm">My Dog</p>
+      </li>
+    </ul>
+
+    <section id="photos" class="photos-container"></section>
+  </div>
+</body>
+</html>
